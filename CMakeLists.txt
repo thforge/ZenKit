@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(ZenKit VERSION 1.3.0)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_DEBUG_POSTFIX d)
 
 option(ZK_BUILD_EXAMPLES "ZenKit: Build the examples." OFF)
 option(ZK_BUILD_TESTS "ZenKit: Build the test suite." ON)
