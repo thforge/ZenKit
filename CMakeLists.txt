@@ -131,7 +131,6 @@ set_target_properties(zenkit PROPERTIES DEBUG_POSTFIX "d" VERSION ${PROJECT_VERS
 
 if (ZK_ENABLE_INSTALL)
     install(TARGETS zenkit ARCHIVE LIBRARY RUNTIME)
-    install(DIRECTORY "include/phoenix" TYPE INCLUDE)
     install(DIRECTORY "include/zenkit" TYPE INCLUDE)
 endif ()
 
