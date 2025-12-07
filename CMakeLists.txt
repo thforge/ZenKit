@@ -7,7 +7,6 @@ option(ZK_BUILD_EXAMPLES "ZenKit: Build the examples." OFF)
 option(ZK_BUILD_TESTS "ZenKit: Build the test suite." ON)
 option(ZK_BUILD_SHARED "ZenKit: Build a shared library." OFF)
 
-option(ZK_ENABLE_ASAN "ZenKit: Enable sanitizers in debug builds." ON)
 option(ZK_ENABLE_DEPRECATION "ZenKit: Enable deprecation warnings." ON)
 option(ZK_ENABLE_INSTALL "ZenKit: Enable CMake install target creation." ON)
 option(ZK_ENABLE_MMAP "ZenKit: Build ZenKit with memory-mapping support." ON)
@@ -107,13 +106,6 @@ if (ZK_ENABLE_FUTURE)
 endif ()
 
 include(support/BuildSupport.cmake)
-
-if (ZK_ENABLE_ASAN)
-    message(STATUS "ZenKit: ASAN enabled")
-else ()
-    message(STATUS "ZenKit: ASAN disabled")
-endif()
-bs_select_cflags(${ZK_ENABLE_ASAN} _ZK_COMPILE_FLAGS _ZK_LINK_FLAGS)
 
 bs_check_posix_mmap(_ZK_HAS_MMAP_POSIX)
 bs_check_win32_mmap(_ZK_HAS_MMAP_WIN32)
